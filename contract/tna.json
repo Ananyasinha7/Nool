@@ -1,0 +1,10 @@
+[
+ { "name": "Sample approved",   "kind": "MANUAL", "offsetDays": 40 },
+ { "name": "Fabric in-house",   "kind": "MANUAL", "offsetDays": 32 },
+ { "name": "Cutting complete",  "kind": "STAGE", "stageKey": "CUTTING",   "offsetDays": 24 },
+ { "name": "Printing complete", "kind": "STAGE", "stageKey": "PRINTING",  "offsetDays": 16, "printOnly": true },
+ { "name": "Stitching complete","kind": "STAGE", "stageKey": "STITCHING", "offsetDays": 7 },
+ { "name": "Finishing complete","kind": "STAGE", "stageKey": "FINISHING", "offsetDays": 3 },
+ { "name": "Packing complete",  "kind": "STAGE", "stageKey": "PACKING",   "offsetDays": 2 },
+ { "name": "Final inspection",  "kind": "MANUAL", "offsetDays": 1 }
+]

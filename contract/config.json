@@ -1,0 +1,13 @@
+{
+  "workDays": [1,2,3,4,5,6],
+  "rateWeights": [3,2,1],
+  "ratioGreen": 1.0, "ratioAmber": 0.8,
+  "slipAmberMin": 1, "slipRedMin": 3,
+  "staleWorkdays": 2, "earlyLeadDays": 14,
+  "stageLagWd": 1, "inspectionWd": 1,
+  "qtyCap": 1.05, "backdateDays": 3,
+  "aiConfidenceMin": 0.7,
+  "sessionDays": { "SUPERVISOR": 30, "MERCHANDISER": 7, "BUYER": 30 },
+  "maxFailedLogins": 5, "lockoutMin": 10,
+  "photoMaxBytes": 400000, "audioMaxSeconds": 30
+}

@@ -1,0 +1,81 @@
+{
+  "id": "a35d0419a97245c786eb4eefcb9835f0",
+  "poNo": "B-PO-88213",
+  "style": "Men's crew neck tee",
+  "colour": "navy",
+  "qty": 12000,
+  "exFactory": "2026-11-20",
+  "progressPct": 39,
+  "currentStage": "STITCHING",
+  "delayNotice": {
+    "categoryLabel": "Machine breakdown",
+    "shipSlipDays": 0,
+    "text": "Delay notice · Machine breakdown · we are monitoring the ship date",
+    "confirmedAt": "2026-11-02T09:00:00Z"
+  },
+  "milestones": [
+    {
+      "name": "Sample approved",
+      "plannedDate": "2026-10-11",
+      "actualDate": "2026-10-11"
+    },
+    {
+      "name": "Fabric in-house",
+      "plannedDate": "2026-10-19",
+      "actualDate": "2026-10-19"
+    },
+    {
+      "name": "Cutting complete",
+      "plannedDate": "2026-10-27",
+      "actualDate": "2026-10-10"
+    },
+    {
+      "name": "Stitching complete",
+      "plannedDate": "2026-11-13",
+      "actualDate": null
+    },
+    {
+      "name": "Finishing complete",
+      "plannedDate": "2026-11-17",
+      "actualDate": null
+    },
+    {
+      "name": "Packing complete",
+      "plannedDate": "2026-11-18",
+      "actualDate": null
+    },
+    {
+      "name": "Final inspection",
+      "plannedDate": "2026-11-19",
+      "actualDate": null
+    }
+  ],
+  "photos": [
+    {
+      "id": "ee6bff5e-6853-5ab9-a249-a0c3961ca1d8",
+      "takenOn": "2026-11-02",
+      "url": "/api/photos/ee6bff5e-6853-5ab9-a249-a0c3961ca1d8"
+    },
+    {
+      "id": "b1b84f58-c6dd-5569-91e9-80bb5565c113",
+      "takenOn": "2026-11-02",
+      "url": "/api/photos/b1b84f58-c6dd-5569-91e9-80bb5565c113"
+    }
+  ],
+  "dateHistory": [
+    {
+      "changedAt": "2026-10-20T09:00:00Z",
+      "fromDate": "2026-11-11",
+      "toDate": "2026-11-16",
+      "reason": "Material delay: Trims arrived late",
+      "changedBy": "Priya"
+    },
+    {
+      "changedAt": "2026-10-28T09:00:00Z",
+      "fromDate": "2026-11-16",
+      "toDate": "2026-11-20",
+      "reason": "Buyer request: Buyer moved the delivery slot",
+      "changedBy": "Priya"
+    }
+  ]
+}

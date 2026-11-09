@@ -1,0 +1,132 @@
+[
+  {
+    "orderId": "a35d0419a97245c786eb4eefcb9835f0",
+    "poNo": "B-PO-88213",
+    "style": "Men's crew neck tee, navy",
+    "stageKey": "STITCHING",
+    "qty": 12000,
+    "done": 6800,
+    "neededToday": 520,
+    "todayQty": null
+  },
+  {
+    "orderId": "a35d0419a97245c786eb4eefcb9835f0",
+    "poNo": "B-PO-88213",
+    "style": "Men's crew neck tee, navy",
+    "stageKey": "FINISHING",
+    "qty": 12000,
+    "done": 0,
+    "neededToday": 924,
+    "todayQty": null
+  },
+  {
+    "orderId": "a35d0419a97245c786eb4eefcb9835f0",
+    "poNo": "B-PO-88213",
+    "style": "Men's crew neck tee, navy",
+    "stageKey": "PACKING",
+    "qty": 12000,
+    "done": 0,
+    "neededToday": 858,
+    "todayQty": null
+  },
+  {
+    "orderId": "9bb7606dcc1640819795fee12eb52f40",
+    "poNo": "B-PO-88301",
+    "style": "Women's rib tank, white",
+    "stageKey": "STITCHING",
+    "qty": 9000,
+    "done": 2000,
+    "neededToday": 319,
+    "todayQty": null
+  },
+  {
+    "orderId": "9bb7606dcc1640819795fee12eb52f40",
+    "poNo": "B-PO-88301",
+    "style": "Women's rib tank, white",
+    "stageKey": "FINISHING",
+    "qty": 9000,
+    "done": 0,
+    "neededToday": 360,
+    "todayQty": null
+  },
+  {
+    "orderId": "9bb7606dcc1640819795fee12eb52f40",
+    "poNo": "B-PO-88301",
+    "style": "Women's rib tank, white",
+    "stageKey": "PACKING",
+    "qty": 9000,
+    "done": 0,
+    "neededToday": 347,
+    "todayQty": null
+  },
+  {
+    "orderId": "c06139fd6bd24c7e93c659d197294a32",
+    "poNo": "B-PO-88329",
+    "style": "Kids polo, red",
+    "stageKey": "STITCHING",
+    "qty": 6500,
+    "done": 1000,
+    "neededToday": 220,
+    "todayQty": null
+  },
+  {
+    "orderId": "c06139fd6bd24c7e93c659d197294a32",
+    "poNo": "B-PO-88329",
+    "style": "Kids polo, red",
+    "stageKey": "FINISHING",
+    "qty": 6500,
+    "done": 0,
+    "neededToday": 225,
+    "todayQty": null
+  },
+  {
+    "orderId": "c06139fd6bd24c7e93c659d197294a32",
+    "poNo": "B-PO-88329",
+    "style": "Kids polo, red",
+    "stageKey": "PACKING",
+    "qty": 6500,
+    "done": 0,
+    "neededToday": 225,
+    "todayQty": null
+  },
+  {
+    "orderId": "f9c8981b74fe44bcbd9fd1685eec8165",
+    "poNo": "B-PO-88340",
+    "style": "Women's polo, black",
+    "stageKey": "CUTTING",
+    "qty": 7500,
+    "done": 340,
+    "neededToday": 312,
+    "todayQty": null
+  },
+  {
+    "orderId": "f9c8981b74fe44bcbd9fd1685eec8165",
+    "poNo": "B-PO-88340",
+    "style": "Women's polo, black",
+    "stageKey": "STITCHING",
+    "qty": 7500,
+    "done": 0,
+    "neededToday": 203,
+    "todayQty": null
+  },
+  {
+    "orderId": "f9c8981b74fe44bcbd9fd1685eec8165",
+    "poNo": "B-PO-88340",
+    "style": "Women's polo, black",
+    "stageKey": "FINISHING",
+    "qty": 7500,
+    "done": 0,
+    "neededToday": 183,
+    "todayQty": null
+  },
+  {
+    "orderId": "f9c8981b74fe44bcbd9fd1685eec8165",
+    "poNo": "B-PO-88340",
+    "style": "Women's polo, black",
+    "stageKey": "PACKING",
+    "qty": 7500,
+    "done": 0,
+    "neededToday": 183,
+    "todayQty": null
+  }
+]

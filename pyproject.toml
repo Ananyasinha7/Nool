@@ -1,0 +1,12 @@
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["B008"]
+[tool.pytest.ini_options]
+testpaths = ["backend/tests"]
+[tool.ruff.lint.per-file-ignores]
+"backend/alembic/versions/*" = ["E501"]
+"scripts/gen_i18n.py" = ["E501"]   # translation table: one entry per line reads better than wrapped
+"scripts/make_icons.py" = ["E731"]

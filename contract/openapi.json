@@ -1,0 +1,3408 @@
+{
+  "components": {
+    "schemas": {
+      "AssignmentOut": {
+        "additionalProperties": false,
+        "properties": {
+          "stageKey": {
+            "enum": [
+              "CUTTING",
+              "PRINTING",
+              "STITCHING",
+              "WASHING",
+              "FINISHING",
+              "PACKING"
+            ],
+            "title": "Stagekey",
+            "type": "string"
+          },
+          "unitId": {
+            "title": "Unitid",
+            "type": "string"
+          },
+          "unitName": {
+            "title": "Unitname",
+            "type": "string"
+          }
+        },
+        "required": [
+          "stageKey",
+          "unitId",
+          "unitName"
+        ],
+        "title": "AssignmentOut",
+        "type": "object"
+      },
+      "Body_upload_audio_api_logs__log_id__audio_post": {
+        "properties": {
+          "file": {
+            "contentMediaType": "application/octet-stream",
+            "title": "File",
+            "type": "string"
+          }
+        },
+        "required": [
+          "file"
+        ],
+        "title": "Body_upload_audio_api_logs__log_id__audio_post",
+        "type": "object"
+      },
+      "Body_upload_photo_api_logs__log_id__photo_post": {
+        "properties": {
+          "file": {
+            "contentMediaType": "application/octet-stream",
+            "title": "File",
+            "type": "string"
+          },
+          "photoId": {
+            "pattern": "^[0-9a-fA-F-]{36}$",
+            "title": "Photoid",
+            "type": "string"
+          }
+        },
+        "required": [
+          "photoId",
+          "file"
+        ],
+        "title": "Body_upload_photo_api_logs__log_id__photo_post",
+        "type": "object"
+      },
+      "BuyerDateChange": {
+        "additionalProperties": false,
+        "properties": {
+          "changedAt": {
+            "format": "date-time",
+            "title": "Changedat",
+            "type": "string"
+          },
+          "changedBy": {
+            "title": "Changedby",
+            "type": "string"
+          },
+          "fromDate": {
+            "format": "date",
+            "title": "Fromdate",
+            "type": "string"
+          },
+          "reason": {
+            "title": "Reason",
+            "type": "string"
+          },
+          "toDate": {
+            "format": "date",
+            "title": "Todate",
+            "type": "string"
+          }
+        },
+        "required": [
+          "changedAt",
+          "fromDate",
+          "toDate",
+          "reason",
+          "changedBy"
+        ],
+        "title": "BuyerDateChange",
+        "type": "object"
+      },
+      "BuyerDelayNotice": {
+        "additionalProperties": false,
+        "properties": {
+          "categoryLabel": {
+            "title": "Categorylabel",
+            "type": "string"
+          },
+          "confirmedAt": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Confirmedat"
+          },
+          "shipSlipDays": {
+            "title": "Shipslipdays",
+            "type": "integer"
+          },
+          "text": {
+            "title": "Text",
+            "type": "string"
+          }
+        },
+        "required": [
+          "categoryLabel",
+          "shipSlipDays",
+          "text",
+          "confirmedAt"
+        ],
+        "title": "BuyerDelayNotice",
+        "type": "object"
+      },
+      "BuyerMilestone": {
+        "additionalProperties": false,
+        "properties": {
+          "actualDate": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Actualdate"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "plannedDate": {
+            "format": "date",
+            "title": "Planneddate",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "plannedDate",
+          "actualDate"
+        ],
+        "title": "BuyerMilestone",
+        "type": "object"
+      },
+      "BuyerOrderDetail": {
+        "additionalProperties": false,
+        "properties": {
+          "colour": {
+            "title": "Colour",
+            "type": "string"
+          },
+          "currentStage": {
+            "anyOf": [
+              {
+                "enum": [
+                  "CUTTING",
+                  "PRINTING",
+                  "STITCHING",
+                  "WASHING",
+                  "FINISHING",
+                  "PACKING"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Currentstage"
+          },
+          "dateHistory": {
+            "items": {
+              "$ref": "#/components/schemas/BuyerDateChange"
+            },
+            "title": "Datehistory",
+            "type": "array"
+          },
+          "delayNotice": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/BuyerDelayNotice"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "exFactory": {
+            "format": "date",
+            "title": "Exfactory",
+            "type": "string"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "milestones": {
+            "items": {
+              "$ref": "#/components/schemas/BuyerMilestone"
+            },
+            "title": "Milestones",
+            "type": "array"
+          },
+          "photos": {
+            "items": {
+              "$ref": "#/components/schemas/BuyerPhoto"
+            },
+            "title": "Photos",
+            "type": "array"
+          },
+          "poNo": {
+            "title": "Pono",
+            "type": "string"
+          },
+          "progressPct": {
+            "title": "Progresspct",
+            "type": "integer"
+          },
+          "qty": {
+            "title": "Qty",
+            "type": "integer"
+          },
+          "style": {
+            "title": "Style",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "poNo",
+          "style",
+          "colour",
+          "qty",
+          "exFactory",
+          "progressPct",
+          "currentStage",
+          "delayNotice",
+          "milestones",
+          "photos",
+          "dateHistory"
+        ],
+        "title": "BuyerOrderDetail",
+        "type": "object"
+      },
+      "BuyerOrderView": {
+        "additionalProperties": false,
+        "description": "Explicit allow-list: FastAPI strips everything not declared here (BR-05).",
+        "properties": {
+          "colour": {
+            "title": "Colour",
+            "type": "string"
+          },
+          "currentStage": {
+            "anyOf": [
+              {
+                "enum": [
+                  "CUTTING",
+                  "PRINTING",
+                  "STITCHING",
+                  "WASHING",
+                  "FINISHING",
+                  "PACKING"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Currentstage"
+          },
+          "delayNotice": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/BuyerDelayNotice"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "exFactory": {
+            "format": "date",
+            "title": "Exfactory",
+            "type": "string"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "poNo": {
+            "title": "Pono",
+            "type": "string"
+          },
+          "progressPct": {
+            "title": "Progresspct",
+            "type": "integer"
+          },
+          "qty": {
+            "title": "Qty",
+            "type": "integer"
+          },
+          "style": {
+            "title": "Style",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "poNo",
+          "style",
+          "colour",
+          "qty",
+          "exFactory",
+          "progressPct",
+          "currentStage",
+          "delayNotice"
+        ],
+        "title": "BuyerOrderView",
+        "type": "object"
+      },
+      "BuyerPhoto": {
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "takenOn": {
+            "format": "date",
+            "title": "Takenon",
+            "type": "string"
+          },
+          "url": {
+            "title": "Url",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "takenOn",
+          "url"
+        ],
+        "title": "BuyerPhoto",
+        "type": "object"
+      },
+      "BuyerPreview": {
+        "additionalProperties": false,
+        "properties": {
+          "category": {
+            "enum": [
+              "MACHINE_BREAKDOWN",
+              "POWER_CUT",
+              "ABSENTEEISM",
+              "MATERIAL_SHORTAGE",
+              "QUALITY_REWORK",
+              "SUBCONTRACTOR_DELAY",
+              "APPROVAL_PENDING",
+              "OTHER",
+              "NEEDS_REVIEW"
+            ],
+            "title": "Category",
+            "type": "string"
+          },
+          "shipSlipDays": {
+            "title": "Shipslipdays",
+            "type": "integer"
+          },
+          "text": {
+            "title": "Text",
+            "type": "string"
+          }
+        },
+        "required": [
+          "category",
+          "shipSlipDays",
+          "text"
+        ],
+        "title": "BuyerPreview",
+        "type": "object"
+      },
+      "BuyerSessionIn": {
+        "additionalProperties": false,
+        "properties": {
+          "token": {
+            "maxLength": 200,
+            "minLength": 8,
+            "title": "Token",
+            "type": "string"
+          }
+        },
+        "required": [
+          "token"
+        ],
+        "title": "BuyerSessionIn",
+        "type": "object"
+      },
+      "CategoryIn": {
+        "additionalProperties": false,
+        "properties": {
+          "category": {
+            "enum": [
+              "MACHINE_BREAKDOWN",
+              "POWER_CUT",
+              "ABSENTEEISM",
+              "MATERIAL_SHORTAGE",
+              "QUALITY_REWORK",
+              "SUBCONTRACTOR_DELAY",
+              "APPROVAL_PENDING",
+              "OTHER"
+            ],
+            "title": "Category",
+            "type": "string"
+          }
+        },
+        "required": [
+          "category"
+        ],
+        "title": "CategoryIn",
+        "type": "object"
+      },
+      "CreatedOut": {
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "title": "CreatedOut",
+        "type": "object"
+      },
+      "ExFactoryChangeIn": {
+        "additionalProperties": false,
+        "properties": {
+          "reasonCode": {
+            "enum": [
+              "BUYER_REQUEST",
+              "MATERIAL_DELAY",
+              "CAPACITY",
+              "OTHER"
+            ],
+            "title": "Reasoncode",
+            "type": "string"
+          },
+          "reasonText": {
+            "anyOf": [
+              {
+                "maxLength": 300,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reasontext"
+          },
+          "toDate": {
+            "format": "date",
+            "title": "Todate",
+            "type": "string"
+          }
+        },
+        "required": [
+          "toDate",
+          "reasonCode"
+        ],
+        "title": "ExFactoryChangeIn",
+        "type": "object"
+      },
+      "ExFactoryChangeOut": {
+        "additionalProperties": false,
+        "properties": {
+          "changedAt": {
+            "format": "date-time",
+            "title": "Changedat",
+            "type": "string"
+          },
+          "changedByName": {
+            "title": "Changedbyname",
+            "type": "string"
+          },
+          "fromDate": {
+            "format": "date",
+            "title": "Fromdate",
+            "type": "string"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "reasonCode": {
+            "enum": [
+              "BUYER_REQUEST",
+              "MATERIAL_DELAY",
+              "CAPACITY",
+              "OTHER"
+            ],
+            "title": "Reasoncode",
+            "type": "string"
+          },
+          "reasonText": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reasontext"
+          },
+          "toDate": {
+            "format": "date",
+            "title": "Todate",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "fromDate",
+          "toDate",
+          "reasonCode",
+          "reasonText",
+          "changedByName",
+          "changedAt"
+        ],
+        "title": "ExFactoryChangeOut",
+        "type": "object"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "title": "Detail",
+            "type": "array"
+          }
+        },
+        "title": "HTTPValidationError",
+        "type": "object"
+      },
+      "Healthz": {
+        "properties": {
+          "db": {
+            "title": "Db",
+            "type": "boolean"
+          },
+          "ok": {
+            "title": "Ok",
+            "type": "boolean"
+          },
+          "today": {
+            "title": "Today",
+            "type": "string"
+          }
+        },
+        "required": [
+          "ok",
+          "db",
+          "today"
+        ],
+        "title": "Healthz",
+        "type": "object"
+      },
+      "LinkCreated": {
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "url": {
+            "title": "Url",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "url"
+        ],
+        "title": "LinkCreated",
+        "type": "object"
+      },
+      "LinkLabel": {
+        "additionalProperties": false,
+        "properties": {
+          "label": {
+            "default": "",
+            "maxLength": 60,
+            "title": "Label",
+            "type": "string"
+          }
+        },
+        "title": "LinkLabel",
+        "type": "object"
+      },
+      "LinkOut": {
+        "additionalProperties": false,
+        "properties": {
+          "createdAt": {
+            "format": "date-time",
+            "title": "Createdat",
+            "type": "string"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          },
+          "revoked": {
+            "title": "Revoked",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "label",
+          "createdAt",
+          "revoked"
+        ],
+        "title": "LinkOut",
+        "type": "object"
+      },
+      "LogAck": {
+        "additionalProperties": false,
+        "properties": {
+          "effective": {
+            "title": "Effective",
+            "type": "boolean"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "effective"
+        ],
+        "title": "LogAck",
+        "type": "object"
+      },
+      "LogInput": {
+        "additionalProperties": false,
+        "properties": {
+          "clientCreatedAt": {
+            "format": "date-time",
+            "title": "Clientcreatedat",
+            "type": "string"
+          },
+          "id": {
+            "pattern": "^[0-9a-fA-F-]{36}$",
+            "title": "Id",
+            "type": "string"
+          },
+          "logDate": {
+            "format": "date",
+            "title": "Logdate",
+            "type": "string"
+          },
+          "noteText": {
+            "anyOf": [
+              {
+                "maxLength": 500,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Notetext"
+          },
+          "orderId": {
+            "title": "Orderid",
+            "type": "string"
+          },
+          "qty": {
+            "maximum": 1000000.0,
+            "minimum": 0.0,
+            "title": "Qty",
+            "type": "integer"
+          },
+          "stageKey": {
+            "enum": [
+              "CUTTING",
+              "PRINTING",
+              "STITCHING",
+              "WASHING",
+              "FINISHING",
+              "PACKING"
+            ],
+            "title": "Stagekey",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "orderId",
+          "stageKey",
+          "logDate",
+          "qty",
+          "clientCreatedAt"
+        ],
+        "title": "LogInput",
+        "type": "object"
+      },
+      "LogRow": {
+        "additionalProperties": false,
+        "properties": {
+          "enteredBy": {
+            "title": "Enteredby",
+            "type": "string"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "logDate": {
+            "format": "date",
+            "title": "Logdate",
+            "type": "string"
+          },
+          "photoIds": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Photoids",
+            "type": "array"
+          },
+          "qty": {
+            "title": "Qty",
+            "type": "integer"
+          },
+          "sharedPhotoIds": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Sharedphotoids",
+            "type": "array"
+          },
+          "stageKey": {
+            "enum": [
+              "CUTTING",
+              "PRINTING",
+              "STITCHING",
+              "WASHING",
+              "FINISHING",
+              "PACKING"
+            ],
+            "title": "Stagekey",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "logDate",
+          "stageKey",
+          "qty",
+          "enteredBy",
+          "photoIds",
+          "sharedPhotoIds"
+        ],
+        "title": "LogRow",
+        "type": "object"
+      },
+      "LoginRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "password": {
+            "maxLength": 128,
+            "minLength": 1,
+            "title": "Password",
+            "type": "string"
+          },
+          "username": {
+            "maxLength": 64,
+            "minLength": 1,
+            "title": "Username",
+            "type": "string"
+          }
+        },
+        "required": [
+          "username",
+          "password"
+        ],
+        "title": "LoginRequest",
+        "type": "object"
+      },
+      "LookupOption": {
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name"
+        ],
+        "title": "LookupOption",
+        "type": "object"
+      },
+      "Lookups": {
+        "additionalProperties": false,
+        "properties": {
+          "buyers": {
+            "items": {
+              "$ref": "#/components/schemas/LookupOption"
+            },
+            "title": "Buyers",
+            "type": "array"
+          },
+          "shipWeeks": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Shipweeks",
+            "type": "array"
+          },
+          "units": {
+            "items": {
+              "$ref": "#/components/schemas/LookupOption"
+            },
+            "title": "Units",
+            "type": "array"
+          }
+        },
+        "required": [
+          "buyers",
+          "units",
+          "shipWeeks"
+        ],
+        "title": "Lookups",
+        "type": "object"
+      },
+      "MeOut": {
+        "additionalProperties": false,
+        "properties": {
+          "buyerName": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Buyername"
+          },
+          "displayName": {
+            "title": "Displayname",
+            "type": "string"
+          },
+          "lang": {
+            "enum": [
+              "en",
+              "ta"
+            ],
+            "title": "Lang",
+            "type": "string"
+          },
+          "role": {
+            "enum": [
+              "MERCHANDISER",
+              "SUPERVISOR",
+              "BUYER"
+            ],
+            "title": "Role",
+            "type": "string"
+          },
+          "unitId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Unitid"
+          },
+          "unitName": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Unitname"
+          }
+        },
+        "required": [
+          "role",
+          "displayName",
+          "lang"
+        ],
+        "title": "MeOut",
+        "type": "object"
+      },
+      "MePatch": {
+        "additionalProperties": false,
+        "properties": {
+          "lang": {
+            "enum": [
+              "en",
+              "ta"
+            ],
+            "title": "Lang",
+            "type": "string"
+          }
+        },
+        "required": [
+          "lang"
+        ],
+        "title": "MePatch",
+        "type": "object"
+      },
+      "MilestoneOut": {
+        "additionalProperties": false,
+        "properties": {
+          "actualDate": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Actualdate"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "STAGE",
+              "MANUAL"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "plannedDate": {
+            "format": "date",
+            "title": "Planneddate",
+            "type": "string"
+          },
+          "sortOrder": {
+            "title": "Sortorder",
+            "type": "integer"
+          },
+          "stageKey": {
+            "anyOf": [
+              {
+                "enum": [
+                  "CUTTING",
+                  "PRINTING",
+                  "STITCHING",
+                  "WASHING",
+                  "FINISHING",
+                  "PACKING"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Stagekey"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "kind",
+          "stageKey",
+          "plannedDate",
+          "actualDate",
+          "sortOrder"
+        ],
+        "title": "MilestoneOut",
+        "type": "object"
+      },
+      "MilestonePatch": {
+        "additionalProperties": false,
+        "properties": {
+          "actualDate": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Actualdate"
+          }
+        },
+        "required": [
+          "actualDate"
+        ],
+        "title": "MilestonePatch",
+        "type": "object"
+      },
+      "NoteView": {
+        "additionalProperties": false,
+        "properties": {
+          "category": {
+            "enum": [
+              "MACHINE_BREAKDOWN",
+              "POWER_CUT",
+              "ABSENTEEISM",
+              "MATERIAL_SHORTAGE",
+              "QUALITY_REWORK",
+              "SUBCONTRACTOR_DELAY",
+              "APPROVAL_PENDING",
+              "OTHER",
+              "NEEDS_REVIEW"
+            ],
+            "title": "Category",
+            "type": "string"
+          },
+          "confidence": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Confidence"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "lang": {
+            "enum": [
+              "ta",
+              "en"
+            ],
+            "title": "Lang",
+            "type": "string"
+          },
+          "needsReview": {
+            "title": "Needsreview",
+            "type": "boolean"
+          },
+          "originalText": {
+            "title": "Originaltext",
+            "type": "string"
+          },
+          "source": {
+            "enum": [
+              "AI",
+              "RULE",
+              "HUMAN"
+            ],
+            "title": "Source",
+            "type": "string"
+          },
+          "translationEn": {
+            "title": "Translationen",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "originalText",
+          "lang",
+          "translationEn",
+          "category",
+          "confidence",
+          "source",
+          "needsReview"
+        ],
+        "title": "NoteView",
+        "type": "object"
+      },
+      "OkOut": {
+        "additionalProperties": false,
+        "properties": {
+          "ok": {
+            "default": true,
+            "title": "Ok",
+            "type": "boolean"
+          }
+        },
+        "title": "OkOut",
+        "type": "object"
+      },
+      "OrderCreate": {
+        "additionalProperties": false,
+        "properties": {
+          "buyerId": {
+            "title": "Buyerid",
+            "type": "string"
+          },
+          "colour": {
+            "maxLength": 60,
+            "minLength": 1,
+            "title": "Colour",
+            "type": "string"
+          },
+          "exFactory": {
+            "format": "date",
+            "title": "Exfactory",
+            "type": "string"
+          },
+          "hasPrint": {
+            "default": false,
+            "title": "Hasprint",
+            "type": "boolean"
+          },
+          "hasWash": {
+            "default": false,
+            "title": "Haswash",
+            "type": "boolean"
+          },
+          "lines": {
+            "items": {
+              "$ref": "#/components/schemas/OrderLineIn"
+            },
+            "maxItems": 20,
+            "minItems": 1,
+            "title": "Lines",
+            "type": "array"
+          },
+          "milestoneDates": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "format": "date",
+                  "type": "string"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Milestonedates"
+          },
+          "poNo": {
+            "maxLength": 40,
+            "minLength": 1,
+            "title": "Pono",
+            "type": "string"
+          },
+          "printUnitId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Printunitid"
+          },
+          "qty": {
+            "anyOf": [
+              {
+                "exclusiveMinimum": 0.0,
+                "maximum": 10000000.0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Qty"
+          },
+          "style": {
+            "maxLength": 120,
+            "minLength": 1,
+            "title": "Style",
+            "type": "string"
+          },
+          "templateId": {
+            "title": "Templateid",
+            "type": "string"
+          },
+          "unitId": {
+            "title": "Unitid",
+            "type": "string"
+          },
+          "washUnitId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Washunitid"
+          }
+        },
+        "required": [
+          "poNo",
+          "buyerId",
+          "style",
+          "colour",
+          "unitId",
+          "exFactory",
+          "templateId",
+          "lines"
+        ],
+        "title": "OrderCreate",
+        "type": "object"
+      },
+      "OrderDetail": {
+        "additionalProperties": false,
+        "properties": {
+          "assignments": {
+            "items": {
+              "$ref": "#/components/schemas/AssignmentOut"
+            },
+            "title": "Assignments",
+            "type": "array"
+          },
+          "buyerId": {
+            "title": "Buyerid",
+            "type": "string"
+          },
+          "buyerName": {
+            "title": "Buyername",
+            "type": "string"
+          },
+          "colour": {
+            "title": "Colour",
+            "type": "string"
+          },
+          "exFactory": {
+            "format": "date",
+            "title": "Exfactory",
+            "type": "string"
+          },
+          "exFactoryOriginal": {
+            "format": "date",
+            "title": "Exfactoryoriginal",
+            "type": "string"
+          },
+          "hasPrint": {
+            "title": "Hasprint",
+            "type": "boolean"
+          },
+          "hasWash": {
+            "title": "Haswash",
+            "type": "boolean"
+          },
+          "health": {
+            "$ref": "#/components/schemas/OrderHealth"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "lines": {
+            "items": {
+              "$ref": "#/components/schemas/OrderLineOut"
+            },
+            "title": "Lines",
+            "type": "array"
+          },
+          "milestones": {
+            "items": {
+              "$ref": "#/components/schemas/MilestoneOut"
+            },
+            "title": "Milestones",
+            "type": "array"
+          },
+          "openWarning": {
+            "title": "Openwarning",
+            "type": "boolean"
+          },
+          "poNo": {
+            "title": "Pono",
+            "type": "string"
+          },
+          "qty": {
+            "title": "Qty",
+            "type": "integer"
+          },
+          "style": {
+            "title": "Style",
+            "type": "string"
+          },
+          "templateId": {
+            "title": "Templateid",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "poNo",
+          "buyerId",
+          "buyerName",
+          "style",
+          "colour",
+          "qty",
+          "hasPrint",
+          "hasWash",
+          "exFactory",
+          "exFactoryOriginal",
+          "templateId",
+          "lines",
+          "milestones",
+          "assignments",
+          "health",
+          "openWarning"
+        ],
+        "title": "OrderDetail",
+        "type": "object"
+      },
+      "OrderHealth": {
+        "additionalProperties": false,
+        "description": "Output of app/projection (FR-10, 11, 13).",
+        "properties": {
+          "activeStage": {
+            "anyOf": [
+              {
+                "enum": [
+                  "CUTTING",
+                  "PRINTING",
+                  "STITCHING",
+                  "WASHING",
+                  "FINISHING",
+                  "PACKING"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Activestage"
+          },
+          "actualPerDay": {
+            "title": "Actualperday",
+            "type": "number"
+          },
+          "done": {
+            "title": "Done",
+            "type": "integer"
+          },
+          "health": {
+            "enum": [
+              "GREEN",
+              "AMBER",
+              "RED",
+              "GREY"
+            ],
+            "title": "Health",
+            "type": "string"
+          },
+          "lastLogDate": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Lastlogdate"
+          },
+          "leadDays": {
+            "title": "Leaddays",
+            "type": "integer"
+          },
+          "lowConfidence": {
+            "title": "Lowconfidence",
+            "type": "boolean"
+          },
+          "orderId": {
+            "title": "Orderid",
+            "type": "string"
+          },
+          "overdue": {
+            "title": "Overdue",
+            "type": "boolean"
+          },
+          "projectedAtDeadline": {
+            "title": "Projectedatdeadline",
+            "type": "integer"
+          },
+          "projectedFinish": {
+            "format": "date",
+            "title": "Projectedfinish",
+            "type": "string"
+          },
+          "projectedShipDate": {
+            "format": "date",
+            "title": "Projectedshipdate",
+            "type": "string"
+          },
+          "qty": {
+            "title": "Qty",
+            "type": "integer"
+          },
+          "ratio": {
+            "title": "Ratio",
+            "type": "number"
+          },
+          "recoveryPerDay": {
+            "title": "Recoveryperday",
+            "type": "integer"
+          },
+          "remaining": {
+            "title": "Remaining",
+            "type": "integer"
+          },
+          "requiredPerDay": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Requiredperday"
+          },
+          "shipSlipDays": {
+            "title": "Shipslipdays",
+            "type": "integer"
+          },
+          "stageDeadline": {
+            "format": "date",
+            "title": "Stagedeadline",
+            "type": "string"
+          },
+          "stageSlipDays": {
+            "title": "Stageslipdays",
+            "type": "integer"
+          },
+          "stale": {
+            "title": "Stale",
+            "type": "boolean"
+          },
+          "workingDaysLeft": {
+            "title": "Workingdaysleft",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "orderId",
+          "health",
+          "activeStage",
+          "qty",
+          "done",
+          "remaining",
+          "requiredPerDay",
+          "actualPerDay",
+          "workingDaysLeft",
+          "overdue",
+          "stageDeadline",
+          "projectedFinish",
+          "stageSlipDays",
+          "projectedShipDate",
+          "shipSlipDays",
+          "projectedAtDeadline",
+          "ratio",
+          "lowConfidence",
+          "stale",
+          "lastLogDate",
+          "leadDays",
+          "recoveryPerDay"
+        ],
+        "title": "OrderHealth",
+        "type": "object"
+      },
+      "OrderLineIn": {
+        "additionalProperties": false,
+        "properties": {
+          "qty": {
+            "exclusiveMinimum": 0.0,
+            "maximum": 1000000.0,
+            "title": "Qty",
+            "type": "integer"
+          },
+          "size": {
+            "maxLength": 16,
+            "minLength": 1,
+            "title": "Size",
+            "type": "string"
+          }
+        },
+        "required": [
+          "size",
+          "qty"
+        ],
+        "title": "OrderLineIn",
+        "type": "object"
+      },
+      "OrderLineOut": {
+        "additionalProperties": false,
+        "properties": {
+          "qty": {
+            "title": "Qty",
+            "type": "integer"
+          },
+          "size": {
+            "title": "Size",
+            "type": "string"
+          }
+        },
+        "required": [
+          "size",
+          "qty"
+        ],
+        "title": "OrderLineOut",
+        "type": "object"
+      },
+      "OrderSummary": {
+        "additionalProperties": false,
+        "properties": {
+          "buyerName": {
+            "title": "Buyername",
+            "type": "string"
+          },
+          "colour": {
+            "title": "Colour",
+            "type": "string"
+          },
+          "exFactory": {
+            "format": "date",
+            "title": "Exfactory",
+            "type": "string"
+          },
+          "health": {
+            "$ref": "#/components/schemas/OrderHealth"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "openWarning": {
+            "title": "Openwarning",
+            "type": "boolean"
+          },
+          "poNo": {
+            "title": "Pono",
+            "type": "string"
+          },
+          "qty": {
+            "title": "Qty",
+            "type": "integer"
+          },
+          "style": {
+            "title": "Style",
+            "type": "string"
+          },
+          "unitName": {
+            "title": "Unitname",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "poNo",
+          "buyerName",
+          "style",
+          "colour",
+          "qty",
+          "exFactory",
+          "unitName",
+          "health",
+          "openWarning"
+        ],
+        "title": "OrderSummary",
+        "type": "object"
+      },
+      "OutboxOut": {
+        "additionalProperties": false,
+        "properties": {
+          "body": {
+            "title": "Body",
+            "type": "string"
+          },
+          "createdAt": {
+            "format": "date-time",
+            "title": "Createdat",
+            "type": "string"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "subject": {
+            "title": "Subject",
+            "type": "string"
+          },
+          "to": {
+            "title": "To",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "to",
+          "subject",
+          "body",
+          "createdAt"
+        ],
+        "title": "OutboxOut",
+        "type": "object"
+      },
+      "PhotoAck": {
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "title": "PhotoAck",
+        "type": "object"
+      },
+      "PhotoPatch": {
+        "additionalProperties": false,
+        "properties": {
+          "shareWithBuyer": {
+            "title": "Sharewithbuyer",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "shareWithBuyer"
+        ],
+        "title": "PhotoPatch",
+        "type": "object"
+      },
+      "SupOrderCard": {
+        "additionalProperties": false,
+        "properties": {
+          "done": {
+            "title": "Done",
+            "type": "integer"
+          },
+          "neededToday": {
+            "title": "Neededtoday",
+            "type": "integer"
+          },
+          "orderId": {
+            "title": "Orderid",
+            "type": "string"
+          },
+          "poNo": {
+            "title": "Pono",
+            "type": "string"
+          },
+          "qty": {
+            "title": "Qty",
+            "type": "integer"
+          },
+          "stageKey": {
+            "enum": [
+              "CUTTING",
+              "PRINTING",
+              "STITCHING",
+              "WASHING",
+              "FINISHING",
+              "PACKING"
+            ],
+            "title": "Stagekey",
+            "type": "string"
+          },
+          "style": {
+            "title": "Style",
+            "type": "string"
+          },
+          "todayQty": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Todayqty"
+          }
+        },
+        "required": [
+          "orderId",
+          "poNo",
+          "style",
+          "stageKey",
+          "qty",
+          "done",
+          "neededToday",
+          "todayQty"
+        ],
+        "title": "SupOrderCard",
+        "type": "object"
+      },
+      "TnaItemOut": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "enum": [
+              "STAGE",
+              "MANUAL"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "offsetDays": {
+            "title": "Offsetdays",
+            "type": "integer"
+          },
+          "printOnly": {
+            "title": "Printonly",
+            "type": "boolean"
+          },
+          "stageKey": {
+            "anyOf": [
+              {
+                "enum": [
+                  "CUTTING",
+                  "PRINTING",
+                  "STITCHING",
+                  "WASHING",
+                  "FINISHING",
+                  "PACKING"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Stagekey"
+          }
+        },
+        "required": [
+          "name",
+          "kind",
+          "stageKey",
+          "offsetDays",
+          "printOnly"
+        ],
+        "title": "TnaItemOut",
+        "type": "object"
+      },
+      "TnaTemplateOut": {
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/TnaItemOut"
+            },
+            "title": "Items",
+            "type": "array"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "items"
+        ],
+        "title": "TnaTemplateOut",
+        "type": "object"
+      },
+      "ValidationError": {
+        "properties": {
+          "ctx": {
+            "title": "Context",
+            "type": "object"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "title": "Location",
+            "type": "array"
+          },
+          "msg": {
+            "title": "Message",
+            "type": "string"
+          },
+          "type": {
+            "title": "Error Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError",
+        "type": "object"
+      },
+      "WarningView": {
+        "additionalProperties": false,
+        "properties": {
+          "buyerPreview": {
+            "$ref": "#/components/schemas/BuyerPreview"
+          },
+          "health": {
+            "enum": [
+              "GREEN",
+              "AMBER",
+              "RED",
+              "GREY"
+            ],
+            "title": "Health",
+            "type": "string"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "note": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/NoteView"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "orderId": {
+            "title": "Orderid",
+            "type": "string"
+          },
+          "poNo": {
+            "title": "Pono",
+            "type": "string"
+          },
+          "snapshot": {
+            "$ref": "#/components/schemas/OrderHealth"
+          },
+          "status": {
+            "enum": [
+              "DRAFT",
+              "CONFIRMED",
+              "DISMISSED"
+            ],
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "orderId",
+          "poNo",
+          "health",
+          "snapshot",
+          "note",
+          "status",
+          "buyerPreview"
+        ],
+        "title": "WarningView",
+        "type": "object"
+      }
+    }
+  },
+  "info": {
+    "title": "Nool API",
+    "version": "1.0.0"
+  },
+  "openapi": "3.1.0",
+  "paths": {
+    "/api/auth/login": {
+      "post": {
+        "operationId": "login_api_auth_login_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Login",
+        "tags": [
+          "auth"
+        ]
+      }
+    },
+    "/api/auth/logout": {
+      "post": {
+        "operationId": "logout_api_auth_logout_post",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OkOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Logout",
+        "tags": [
+          "auth"
+        ]
+      }
+    },
+    "/api/buyer-links/{link_id}": {
+      "delete": {
+        "operationId": "revoke_api_buyer_links__link_id__delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "link_id",
+            "required": true,
+            "schema": {
+              "title": "Link Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OkOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Revoke",
+        "tags": [
+          "buyer-links"
+        ]
+      }
+    },
+    "/api/buyer/orders": {
+      "get": {
+        "operationId": "buyer_orders_api_buyer_orders_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/BuyerOrderView"
+                  },
+                  "title": "Response Buyer Orders Api Buyer Orders Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Buyer Orders",
+        "tags": [
+          "buyer"
+        ]
+      }
+    },
+    "/api/buyer/orders/{order_id}": {
+      "get": {
+        "operationId": "buyer_order_api_buyer_orders__order_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "order_id",
+            "required": true,
+            "schema": {
+              "title": "Order Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BuyerOrderDetail"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Buyer Order",
+        "tags": [
+          "buyer"
+        ]
+      }
+    },
+    "/api/buyer/session": {
+      "post": {
+        "operationId": "start_session_api_buyer_session_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BuyerSessionIn"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OkOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Start Session",
+        "tags": [
+          "buyer"
+        ]
+      }
+    },
+    "/api/buyers/{buyer_id}/links": {
+      "get": {
+        "operationId": "list_links_api_buyers__buyer_id__links_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "buyer_id",
+            "required": true,
+            "schema": {
+              "title": "Buyer Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/LinkOut"
+                  },
+                  "title": "Response List Links Api Buyers  Buyer Id  Links Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "List Links",
+        "tags": [
+          "buyer-links"
+        ]
+      },
+      "post": {
+        "operationId": "create_link_api_buyers__buyer_id__links_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "buyer_id",
+            "required": true,
+            "schema": {
+              "title": "Buyer Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "anyOf": [
+                  {
+                    "$ref": "#/components/schemas/LinkLabel"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Body"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LinkCreated"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Create Link",
+        "tags": [
+          "buyer-links"
+        ]
+      }
+    },
+    "/api/export/weekly": {
+      "get": {
+        "operationId": "weekly_api_export_weekly_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "buyerId",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Buyerid"
+            }
+          },
+          {
+            "in": "query",
+            "name": "week",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "pattern": "^\\d{4}-W\\d{2}$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Week"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Weekly",
+        "tags": [
+          "export"
+        ]
+      }
+    },
+    "/api/healthz": {
+      "get": {
+        "operationId": "healthz_api_healthz_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Healthz"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Healthz",
+        "tags": [
+          "health"
+        ]
+      }
+    },
+    "/api/logs": {
+      "post": {
+        "operationId": "post_log_api_logs_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LogInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LogAck"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Post Log",
+        "tags": [
+          "logs"
+        ]
+      }
+    },
+    "/api/logs/{log_id}/audio": {
+      "post": {
+        "operationId": "upload_audio_api_logs__log_id__audio_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "log_id",
+            "required": true,
+            "schema": {
+              "title": "Log Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_upload_audio_api_logs__log_id__audio_post"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OkOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Upload Audio",
+        "tags": [
+          "audio"
+        ]
+      }
+    },
+    "/api/logs/{log_id}/photo": {
+      "post": {
+        "operationId": "upload_photo_api_logs__log_id__photo_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "log_id",
+            "required": true,
+            "schema": {
+              "title": "Log Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_upload_photo_api_logs__log_id__photo_post"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PhotoAck"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Upload Photo",
+        "tags": [
+          "photos"
+        ]
+      }
+    },
+    "/api/lookups": {
+      "get": {
+        "operationId": "lookups_api_lookups_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Lookups"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Lookups",
+        "tags": [
+          "orders",
+          "lookups"
+        ]
+      }
+    },
+    "/api/me": {
+      "get": {
+        "operationId": "me_api_me_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Me",
+        "tags": [
+          "auth"
+        ]
+      },
+      "patch": {
+        "operationId": "patch_me_api_me_patch",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MePatch"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Patch Me",
+        "tags": [
+          "auth"
+        ]
+      }
+    },
+    "/api/milestones/{milestone_id}": {
+      "patch": {
+        "operationId": "patch_milestone_api_milestones__milestone_id__patch",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "milestone_id",
+            "required": true,
+            "schema": {
+              "title": "Milestone Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MilestonePatch"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MilestoneOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Patch Milestone",
+        "tags": [
+          "milestones"
+        ]
+      }
+    },
+    "/api/notes": {
+      "get": {
+        "operationId": "list_notes_api_notes_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "orderId",
+            "required": true,
+            "schema": {
+              "title": "Orderid",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/NoteView"
+                  },
+                  "title": "Response List Notes Api Notes Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "List Notes",
+        "tags": [
+          "notes"
+        ]
+      }
+    },
+    "/api/notes/{note_id}": {
+      "patch": {
+        "operationId": "set_category_api_notes__note_id__patch",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "note_id",
+            "required": true,
+            "schema": {
+              "title": "Note Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CategoryIn"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NoteView"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Set Category",
+        "tags": [
+          "notes"
+        ]
+      }
+    },
+    "/api/orders": {
+      "get": {
+        "operationId": "list_orders_api_orders_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "buyerId",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Buyerid"
+            }
+          },
+          {
+            "in": "query",
+            "name": "unitId",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Unitid"
+            }
+          },
+          {
+            "in": "query",
+            "name": "shipWeek",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "pattern": "^\\d{4}-W\\d{2}$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Shipweek"
+            }
+          },
+          {
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "GREEN",
+                    "AMBER",
+                    "RED",
+                    "GREY"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Status"
+            }
+          },
+          {
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maxLength": 60,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Q"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/OrderSummary"
+                  },
+                  "title": "Response List Orders Api Orders Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "List Orders",
+        "tags": [
+          "orders"
+        ]
+      },
+      "post": {
+        "operationId": "create_order_api_orders_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OrderCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreatedOut"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Create Order",
+        "tags": [
+          "orders"
+        ]
+      }
+    },
+    "/api/orders/{order_id}": {
+      "get": {
+        "operationId": "get_order_api_orders__order_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "order_id",
+            "required": true,
+            "schema": {
+              "title": "Order Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderDetail"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Get Order",
+        "tags": [
+          "orders"
+        ]
+      }
+    },
+    "/api/orders/{order_id}/changes": {
+      "get": {
+        "operationId": "order_changes_api_orders__order_id__changes_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "order_id",
+            "required": true,
+            "schema": {
+              "title": "Order Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/ExFactoryChangeOut"
+                  },
+                  "title": "Response Order Changes Api Orders  Order Id  Changes Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Order Changes",
+        "tags": [
+          "orders"
+        ]
+      }
+    },
+    "/api/orders/{order_id}/ex-factory": {
+      "patch": {
+        "operationId": "change_ex_factory_api_orders__order_id__ex_factory_patch",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "order_id",
+            "required": true,
+            "schema": {
+              "title": "Order Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExFactoryChangeIn"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrderDetail"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Change Ex Factory",
+        "tags": [
+          "orders"
+        ]
+      }
+    },
+    "/api/orders/{order_id}/logs": {
+      "get": {
+        "operationId": "order_logs_api_orders__order_id__logs_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "order_id",
+            "required": true,
+            "schema": {
+              "title": "Order Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "days",
+            "required": false,
+            "schema": {
+              "default": 10,
+              "maximum": 60,
+              "minimum": 1,
+              "title": "Days",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/LogRow"
+                  },
+                  "title": "Response Order Logs Api Orders  Order Id  Logs Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Order Logs",
+        "tags": [
+          "orders"
+        ]
+      }
+    },
+    "/api/outbox": {
+      "get": {
+        "operationId": "outbox_api_outbox_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/OutboxOut"
+                  },
+                  "title": "Response Outbox Api Outbox Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Outbox",
+        "tags": [
+          "outbox"
+        ]
+      }
+    },
+    "/api/photos/{photo_id}": {
+      "get": {
+        "operationId": "get_photo_api_photos__photo_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "photo_id",
+            "required": true,
+            "schema": {
+              "title": "Photo Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Get Photo",
+        "tags": [
+          "photos"
+        ]
+      },
+      "patch": {
+        "operationId": "patch_photo_api_photos__photo_id__patch",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "photo_id",
+            "required": true,
+            "schema": {
+              "title": "Photo Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PhotoPatch"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PhotoAck"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Patch Photo",
+        "tags": [
+          "photos"
+        ]
+      }
+    },
+    "/api/sup/orders": {
+      "get": {
+        "operationId": "sup_orders_api_sup_orders_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/SupOrderCard"
+                  },
+                  "title": "Response Sup Orders Api Sup Orders Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Sup Orders",
+        "tags": [
+          "supervisor"
+        ]
+      }
+    },
+    "/api/tna-templates": {
+      "get": {
+        "operationId": "tna_templates_api_tna_templates_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/TnaTemplateOut"
+                  },
+                  "title": "Response Tna Templates Api Tna Templates Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Tna Templates",
+        "tags": [
+          "milestones"
+        ]
+      }
+    },
+    "/api/warnings": {
+      "get": {
+        "operationId": "list_warnings_api_warnings_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "DRAFT",
+                    "CONFIRMED",
+                    "DISMISSED"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Status"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/WarningView"
+                  },
+                  "title": "Response List Warnings Api Warnings Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "List Warnings",
+        "tags": [
+          "warnings"
+        ]
+      }
+    },
+    "/api/warnings/{warning_id}/confirm": {
+      "post": {
+        "operationId": "confirm_api_warnings__warning_id__confirm_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "warning_id",
+            "required": true,
+            "schema": {
+              "title": "Warning Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CategoryIn"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WarningView"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Confirm",
+        "tags": [
+          "warnings"
+        ]
+      }
+    },
+    "/api/warnings/{warning_id}/dismiss": {
+      "post": {
+        "operationId": "dismiss_api_warnings__warning_id__dismiss_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "warning_id",
+            "required": true,
+            "schema": {
+              "title": "Warning Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WarningView"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Dismiss",
+        "tags": [
+          "warnings"
+        ]
+      }
+    }
+  }
+}

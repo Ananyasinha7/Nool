@@ -1,0 +1,94 @@
+[
+  {
+    "id": "b39bb8698c894defb0c6baad338c192b",
+    "orderId": "9ff311b119274a7d9ad6ea08aa4785e1",
+    "poNo": "B-PO-88240",
+    "health": "RED",
+    "snapshot": {
+      "orderId": "9ff311b119274a7d9ad6ea08aa4785e1",
+      "health": "RED",
+      "activeStage": "FINISHING",
+      "qty": 8000,
+      "done": 5200,
+      "remaining": 2800,
+      "requiredPerDay": 466.6666666666667,
+      "actualPerDay": 299.1666666666667,
+      "workingDaysLeft": 6,
+      "overdue": false,
+      "stageDeadline": "2026-11-09",
+      "projectedFinish": "2026-11-13",
+      "stageSlipDays": 4,
+      "projectedShipDate": "2026-11-16",
+      "shipSlipDays": 3,
+      "projectedAtDeadline": 6995,
+      "ratio": 0.6410714285714286,
+      "lowConfidence": false,
+      "stale": false,
+      "lastLogDate": "2026-11-02",
+      "leadDays": 9,
+      "recoveryPerDay": 168
+    },
+    "note": {
+      "id": "24087312d0b049478a5594d4fb9451df",
+      "originalText": "2 தையல் மெசின் பழுது",
+      "lang": "ta",
+      "translationEn": "2 sewing machines are broken",
+      "category": "MACHINE_BREAKDOWN",
+      "confidence": 0.93,
+      "source": "AI",
+      "needsReview": false
+    },
+    "status": "DRAFT",
+    "buyerPreview": {
+      "category": "MACHINE_BREAKDOWN",
+      "shipSlipDays": 3,
+      "text": "Delay notice · Machine breakdown · ship date may move by about 3 days"
+    }
+  },
+  {
+    "id": "9cc30c4faf564e01be28a6aa0d94f4cc",
+    "orderId": "9bb7606dcc1640819795fee12eb52f40",
+    "poNo": "B-PO-88301",
+    "health": "RED",
+    "snapshot": {
+      "orderId": "9bb7606dcc1640819795fee12eb52f40",
+      "health": "RED",
+      "activeStage": "STITCHING",
+      "qty": 9000,
+      "done": 2000,
+      "remaining": 7000,
+      "requiredPerDay": 318.1818181818182,
+      "actualPerDay": 230.0,
+      "workingDaysLeft": 22,
+      "overdue": false,
+      "stageDeadline": "2026-11-27",
+      "projectedFinish": "2026-12-08",
+      "stageSlipDays": 9,
+      "projectedShipDate": "2026-12-11",
+      "shipSlipDays": 6,
+      "projectedAtDeadline": 7060,
+      "ratio": 0.7228571428571429,
+      "lowConfidence": false,
+      "stale": false,
+      "lastLogDate": "2026-11-02",
+      "leadDays": 31,
+      "recoveryPerDay": 89
+    },
+    "note": {
+      "id": "d31718bc2f47480293caa26f074544e4",
+      "originalText": "இன்று மின்சாரம் 3 மணி நேரம் இல்லை",
+      "lang": "ta",
+      "translationEn": "No electricity for 3 hours today",
+      "category": "POWER_CUT",
+      "confidence": 0.95,
+      "source": "AI",
+      "needsReview": false
+    },
+    "status": "DRAFT",
+    "buyerPreview": {
+      "category": "POWER_CUT",
+      "shipSlipDays": 6,
+      "text": "Delay notice · Power cut · ship date may move by about 6 days"
+    }
+  }
+]

@@ -1,0 +1,247 @@
+[
+ {
+  "text": "இன்று மின்சாரம் 3 மணி நேரம் இல்லை",
+  "translation": "No electricity for 3 hours today",
+  "acceptable": [
+   "POWER_CUT"
+  ],
+  "labelReviewed": false
+ },
+ {
+  "text": "2 தையல் மெசின் பழுது",
+  "translation": "2 sewing machines are broken",
+  "acceptable": [
+   "MACHINE_BREAKDOWN"
+  ],
+  "labelReviewed": false
+ },
+ {
+  "text": "15 ஆட்கள் வரவில்லை",
+  "translation": "15 workers did not come in",
+  "acceptable": [
+   "ABSENTEEISM"
+  ],
+  "labelReviewed": false
+ },
+ {
+  "text": "நீல நிற துணி வரவில்லை",
+  "translation": "The navy fabric has not arrived",
+  "acceptable": [
+   "MATERIAL_SHORTAGE"
+  ],
+  "labelReviewed": false
+ },
+ {
+  "text": "கழுத்து தையலில் தவறு, மறுவேலை",
+  "translation": "Error in neck stitching, rework needed",
+  "acceptable": [
+   "QUALITY_REWORK"
+  ],
+  "labelReviewed": false
+ },
+ {
+  "text": "machine problem, 2 hours stop",
+  "translation": "Machine problem, 2 hours stop",
+  "acceptable": [
+   "MACHINE_BREAKDOWN"
+  ],
+  "labelReviewed": false
+ },
+ {
+  "text": "மெசின் ரிப்பேர் மற்றும் மின்சாரம் போனது",
+  "translation": "Machine repair and the power went off",
+  "acceptable": [
+   "MACHINE_BREAKDOWN",
+   "POWER_CUT"
+  ],
+  "labelReviewed": false
+ },
+ {
+  "text": "கரண்ட் இல்லை காலை முதல்",
+  "translation": "No current since morning",
+  "acceptable": [
+   "POWER_CUT"
+  ],
+  "labelReviewed": false
+ },
+ {
+  "text": "மின்வெட்டு 2 மணி நேரம்",
+  "translation": "Power cut for 2 hours",
+  "acceptable": [
+   "POWER_CUT"
+  ],
+  "labelReviewed": false
+ },
+ {
+  "text": "இயந்திரம் பழுதாகி நிற்கிறது",
+  "translation": "The machine has broken down and is stopped",
+  "acceptable": [
+   "MACHINE_BREAKDOWN"
+  ],
+  "labelReviewed": false
+ },
+ {
+  "text": "ஓவர்லாக் மெசின் ரிப்பேர்",
+  "translation": "Overlock machine under repair",
+  "acceptable": [
+   "MACHINE_BREAKDOWN"
+  ],
+  "labelReviewed": false
+ },
+ {
+  "text": "ஆட்கள் இல்லை, நிறைய விடுப்பு",
+  "translation": "Not enough people, many on leave",
+  "acceptable": [
+   "ABSENTEEISM"
+  ],
+  "labelReviewed": false
+ },
+ {
+  "text": "workers absent today, 10 people",
+  "translation": "Workers absent today, 10 people",
+  "acceptable": [
+   "ABSENTEEISM"
+  ],
+  "labelReviewed": false
+ },
+ {
+  "text": "பட்டன் வரவில்லை",
+  "translation": "Buttons have not arrived",
+  "acceptable": [
+   "MATERIAL_SHORTAGE"
+  ],
+  "labelReviewed": false
+ },
+ {
+  "text": "ஜிப் ஸ்டாக் இல்லை",
+  "translation": "No zip stock",
+  "acceptable": [
+   "MATERIAL_SHORTAGE"
+  ],
+  "labelReviewed": false
+ },
+ {
+  "text": "fabric not received from dyeing",
+  "translation": "Fabric not received from dyeing",
+  "acceptable": [
+   "MATERIAL_SHORTAGE"
+  ],
+  "labelReviewed": false
+ },
+ {
+  "text": "டிரிம்ஸ் தாமதம்",
+  "translation": "Trims delayed",
+  "acceptable": [
+   "MATERIAL_SHORTAGE"
+  ],
+  "labelReviewed": false
+ },
+ {
+  "text": "ஓட்டை விழுந்துள்ளது, மறுவேலை",
+  "translation": "Holes found, rework needed",
+  "acceptable": [
+   "QUALITY_REWORK"
+  ],
+  "labelReviewed": false
+ },
+ {
+  "text": "கறை படிந்தது, ரீவொர்க் செய்கிறோம்",
+  "translation": "Stains found, we are reworking",
+  "acceptable": [
+   "QUALITY_REWORK"
+  ],
+  "labelReviewed": false
+ },
+ {
+  "text": "rework needed, stitching defect",
+  "translation": "Rework needed, stitching defect",
+  "acceptable": [
+   "QUALITY_REWORK"
+  ],
+  "labelReviewed": false
+ },
+ {
+  "text": "பிரிண்டிங் தாமதம், இன்னும் வரவில்லை",
+  "translation": "Printing is delayed, not back yet",
+  "acceptable": [
+   "SUBCONTRACTOR_DELAY"
+  ],
+  "labelReviewed": false
+ },
+ {
+  "text": "வாஷிங் யூனிட் தாமதம்",
+  "translation": "Washing unit is delayed",
+  "acceptable": [
+   "SUBCONTRACTOR_DELAY"
+  ],
+  "labelReviewed": false
+ },
+ {
+  "text": "பிரிண்டிங் வரவில்லை, காத்திருக்கிறோம்",
+  "translation": "Printing has not come, we are waiting",
+  "acceptable": [
+   "SUBCONTRACTOR_DELAY"
+  ],
+  "labelReviewed": false
+ },
+ {
+  "text": "சாம்பிள் அப்ரூவல் இன்னும் வரவில்லை",
+  "translation": "Sample approval has not come yet",
+  "acceptable": [
+   "APPROVAL_PENDING"
+  ],
+  "labelReviewed": false
+ },
+ {
+  "text": "buyer approval pending",
+  "translation": "Buyer approval pending",
+  "acceptable": [
+   "APPROVAL_PENDING"
+  ],
+  "labelReviewed": false
+ },
+ {
+  "text": "அனுமதி கிடைக்கவில்லை",
+  "translation": "Permission not received",
+  "acceptable": [
+   "APPROVAL_PENDING"
+  ],
+  "labelReviewed": false
+ },
+ {
+  "text": "எல்லாம் சரியாக நடக்கிறது",
+  "translation": "Everything is going fine",
+  "acceptable": [
+   "OTHER",
+   "NEEDS_REVIEW"
+  ],
+  "labelReviewed": false
+ },
+ {
+  "text": "லைன் மாற்றம் காரணமாக நேரம் போனது",
+  "translation": "Time lost because of a line change",
+  "acceptable": [
+   "OTHER",
+   "NEEDS_REVIEW"
+  ],
+  "labelReviewed": false
+ },
+ {
+  "text": "power cut and machine stop",
+  "translation": "Power cut and machine stop",
+  "acceptable": [
+   "POWER_CUT",
+   "MACHINE_BREAKDOWN"
+  ],
+  "labelReviewed": false
+ },
+ {
+  "text": "மெசின் stop, கரண்ட் போச்சு",
+  "translation": "Machine stopped, current gone",
+  "acceptable": [
+   "MACHINE_BREAKDOWN",
+   "POWER_CUT"
+  ],
+  "labelReviewed": false
+ }
+]

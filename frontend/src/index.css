@@ -1,0 +1,39 @@
+@import "@fontsource/inter/latin-400.css";
+@import "@fontsource/inter/latin-500.css";
+@import "@fontsource/inter/latin-600.css";
+@import "@fontsource/noto-sans-tamil/tamil-400.css";
+@import "@fontsource/noto-sans-tamil/tamil-600.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --paper:#F9F8F5; --surface:#FFFFFF; --ink:#181E1B; --ink-2:#46524A; --ink-3:#738078;
+  --line:#E8E5DD; --line-strong:#D4CFBF;
+  --green:#26694A; --green-bg:#EAF3EE; --green-text:#1B5339;
+  --amber:#C48720; --amber-text:#82560A; --amber-bg:#FDF5E6;
+  --red:#C24534; --red-bg:#FAF0EC; --red-text:#993324;
+  --grey:#8E9992; --field:#7A857E;
+  --r-sm:8px; --r-md:12px; --ease:cubic-bezier(.23,1,.32,1);
+  --t-fast:120ms; --t-base:180ms;
+  --safe-b:env(safe-area-inset-bottom,0px); --safe-t:env(safe-area-inset-top,0px);
+}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font-family:Inter,"Noto Sans Tamil",system-ui,sans-serif;
+  font-variant-numeric:tabular-nums;font-size:14px;line-height:22px;letter-spacing:-0.006em}
+@media (max-width:767px){ body{font-size:16px;line-height:24px} }
+:lang(ta){line-height:1.65}
+/* Focus ring with forest green accent */
+:focus-visible{outline:2px solid var(--green);outline-offset:2px;border-radius:var(--r-sm)}
+button{-webkit-tap-highlight-color:transparent}
+.press{transition:transform var(--t-fast) var(--ease), box-shadow var(--t-fast) var(--ease), background-color var(--t-fast) var(--ease)}
+.press:active{transform:scale(.98)}
+.card-surface{background:var(--surface);border:1px solid var(--line);box-shadow:0 1px 3px rgba(24,30,27,0.04),0 1px 2px rgba(24,30,27,0.02)}
+.card-hover{transition:border-color var(--t-base) var(--ease),box-shadow var(--t-base) var(--ease)}
+.card-hover:hover{border-color:var(--line-strong);box-shadow:0 4px 12px rgba(24,30,27,0.06),0 1px 3px rgba(24,30,27,0.03)}
+.skeleton{background:var(--line);border-radius:var(--r-sm);animation:pulse 1.2s ease-in-out infinite alternate}
+@keyframes pulse{from{opacity:.5}to{opacity:.9}}
+.sheet-in{animation:sheetIn var(--t-base) var(--ease)}
+@keyframes sheetIn{from{transform:translateY(16px);opacity:0}to{transform:none;opacity:1}}
+.toast-in{animation:sheetIn var(--t-base) var(--ease)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
