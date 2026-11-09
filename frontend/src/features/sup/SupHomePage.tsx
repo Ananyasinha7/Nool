@@ -11,7 +11,7 @@ import { useAuth } from "../../lib/auth";
 import { loadCards, readCachedCards } from "../../lib/offline/ordersCache";
 import { startSync } from "../../lib/offline/runtime";
 import { useQueue } from "../../lib/offline/useQueue";
-import { getToday, setToday } from "../../lib/today";
+import { setToday } from "../../lib/today";
 import { usePageTitle } from "../../lib/usePageTitle";
 
 export default function SupHomePage() {
@@ -34,7 +34,6 @@ export default function SupHomePage() {
     return () => { alive = false; };
   }, []);
 
-  const today = getToday();
   const entered = useMemo(() => {
     const m = new Map<string, { qty: number; state: (typeof items)[number]["state"] }>();
     for (const i of items) {
