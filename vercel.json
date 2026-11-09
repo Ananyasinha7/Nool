@@ -9,7 +9,8 @@
     "backend": {
       "root": ".",
       "runtime": "python",
-      "entrypoint": "api/index.py"
+      "entrypoint": "api/index.py",
+      "installCommand": "pip install -r backend/requirements.txt"
     }
   },
   "rewrites": [
