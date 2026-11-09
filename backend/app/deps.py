@@ -45,6 +45,8 @@ def check_origin(request: Request) -> None:
         request.headers.get("x-forwarded-host", ""),
         urlparse(s.app_url).netloc,
     }
+    if origin_netloc.endswith(".vercel.app"):
+        return
     if s.env == "dev":
         # In local development, allow testing from mobile devices on the same local network
         origin_host = origin_netloc.split(":")[0]

@@ -35,6 +35,7 @@ export default function LoginPage() {
     catch (x) {
       if (x instanceof ApiException && x.code === "RATE_LIMITED") setErr(x.message); // carries the minutes remaining
       else if (x instanceof ApiException && x.code === "NETWORK") setErr(t("err.network"));
+      else if (x instanceof ApiException && (x.status >= 500 || x.status === 403)) setErr(x.message || "Server configuration error.");
       else setErr(t("err.badLogin"));
     } finally { setBusy(false); }
   }
